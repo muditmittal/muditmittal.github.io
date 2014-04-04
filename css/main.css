@@ -10,18 +10,9 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
+html,button,input,select,textarea {    color: #222;}
 
-html {
-    font-size: 1em;
-    line-height: 1.4;
-}
+html {    font-size: 1em;    line-height: 1.4;}
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -29,73 +20,221 @@ html {
  * Customize the background color to match your design.
  */
 
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
+::-moz-selection {    background: #b3d4fc;    text-shadow: none;}
 
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
+::selection {    background: #b3d4fc;    text-shadow: none;}
 
 /*
  * A better looking default horizontal rule
  */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
+hr {    display: block;    height: 1px;    border: 0;    border-top: 1px solid #ccc;    margin: 1em 0;    padding: 0;}
 
 /*
  * Remove the gap between images, videos, audio and canvas and the bottom of
  * their containers: h5bp.com/i/440
  */
-
-audio,
-canvas,
-img,
-video {
-    vertical-align: middle;
-}
+audio,canvas,img,video {    vertical-align: middle;}
 
 /*
  * Remove default fieldset styles.
  */
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
+fieldset {    border: 0;    margin: 0;    padding: 0;}
 
 /*
  * Allow only vertical resizing of textareas.
  */
 
-textarea {
-    resize: vertical;
-}
+textarea {    resize: vertical;}
 
 /* ==========================================================================
    Browse Happy prompt
    ========================================================================== */
+.browsehappy {    margin: 0.2em 0;    background: #ccc;    color: #000;    padding: 0.2em 0;}
 
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
+
+
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+body {
+    font-family: "Adobe Garamond Pro", Georgia, "Times New Roman";
+}
+
+section {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align: center;
+    font-size: 2em;
+}
+.about {
+    background-color: #f6f6f6;
+    color:#222222;
+    height: 100vh;
+}
+.process {
+    background-color: #ffffff;
+    color:#222222;
+    height: 100vh;
+}
+.work {
+    background-color: #f6f6f6;
+    color: #2222222;
+    height: 100vh;
+}
+
+.info {
+    font-size:1.4em;
+    line-height: 1.4em;
+    margin-top: 1.4em;
+    margin-bottom: 1.4em;
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   Magnify Glass
+   ========================================================================== */
+.glass {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  border-radius: 50%;
+  cursor: crosshair;
+  background-color: #f6f6f6;
+  
+  /* Multiple box shadows to achieve the glass effect */
+  box-shadow:
+    0 0 0 7px rgba(255, 255, 255, 0.85),
+    0 0 7px 7px rgba(0, 0, 0, 0.25), 
+    inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+  
+  /* hide the glass by default */
+  display: none;
+}
+
+
+
+
+/* ==========================================================================
+   Flip Transform
+   ========================================================================== */
+
+        /* simple */
+        .flip-container {
+            -webkit-perspective: 1000;
+            -moz-perspective: 1000;
+            -ms-perspective: 1000;
+            perspective: 1000;
+
+            -ms-transform: perspective(1000px);
+            -moz-transform: perspective(1000px);
+                -moz-transform-style: preserve-3d; 
+                -ms-transform-style: preserve-3d; 
+        }
+
+            /*
+            .flip-container:hover .flipper, .flip-container.hover .flipper, #flip-toggle.flip .flipper {
+                -webkit-transform: rotateY(180deg);
+                -moz-transform: rotateY(180deg);
+                -ms-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+                filter: FlipH;
+                -ms-filter: "FlipH";
+            }
+            */
+
+
+            /* START: Accommodating for IE */
+            .flip-container:hover .back, .flip-container.hover .back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+.flip-container:hover .front, .flip-container.hover .front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+        
+        /* END: Accommodating for IE */
+
+        .flip-container, .front, .back {
+            width: 180px;
+            height: 180px;
+        }
+
+        .flipper {
+            -webkit-transition: 0.6s;
+            -webkit-transform-style: preserve-3d;
+            -ms-transition: 0.6s;
+
+            -moz-transition: 0.6s;
+            -moz-transform: perspective(1000px);
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+
+            transition: 0.6s;
+            transform-style: preserve-3d;
+
+            position: relative;
+        }
+
+        .front, .back {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+
+            -webkit-transition: 0.6s;
+            -webkit-transform-style: preserve-3d;
+
+            -moz-transition: 0.6s;
+            -moz-transform-style: preserve-3d;
+
+            -o-transition: 0.6s;
+            -o-transform-style: preserve-3d;
+
+            -ms-transition: 0.6s;
+            -ms-transform-style: preserve-3d;
+
+            transition: 0.6s;
+            transform-style: preserve-3d;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .front {
+            -webkit-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            z-index: 2;
+        }
+
+        .back {
+            -webkit-transform: rotateY(-180deg);
+            -moz-transform: rotateY(-180deg);
+            -o-transform: rotateY(-180deg);
+            -ms-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+        }
+
+
+
+
+
+
 
 
 
@@ -121,67 +260,32 @@ textarea {
  * Image replacement
  */
 
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
-}
+.ir {    background-color: transparent;     border: 0;    overflow: hidden;
+    /* IE 6/7 fallback */    *text-indent: -9999px;}
 
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
-}
+.ir:before {    content: "";    display: block;    width: 0;    height: 150%;}
 
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
 
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
+.hidden {    display: none !important;    visibility: hidden;}
 
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
+.visuallyhidden {    border: 0;    clip: rect(0 0 0 0);    height: 1px;    margin: -1px;    overflow: hidden;    padding: 0;    position: absolute;    width: 1px;}
 
 /*
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
+.visuallyhidden.focusable:active,.visuallyhidden.focusable:focus {    clip: auto;    height: auto;    margin: 0;    overflow: visible;    position: static;    width: auto;}
 
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
-
-.invisible {
-    visibility: hidden;
-}
+.invisible {    visibility: hidden;}
 
 /*
  * Clearfix: contain floats
@@ -195,24 +299,16 @@ textarea {
  *    `:before` to contain the top-margins of child elements.
  */
 
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
+.clearfix:before,.clearfix:after {    content: " "; /* 1 */    display: table; /* 2 */}
 
-.clearfix:after {
-    clear: both;
-}
+.clearfix:after {    clear: both;}
 
 /*
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
 
-.clearfix {
-    *zoom: 1;
-}
+.clearfix {    *zoom: 1;}
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
