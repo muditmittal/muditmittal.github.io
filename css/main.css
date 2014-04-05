@@ -84,6 +84,14 @@ section {
     color: #2222222;
     height: 100vh;
 }
+.tweets {
+    background-color: #ffffff;
+    color: #2222222;
+    height: 100vh;
+    flex-wrap:wrap;
+    align-items: center;
+    flex-direction:column;
+}
 
 .info {
     font-size:1.4em;
@@ -92,6 +100,18 @@ section {
     margin-bottom: 1.4em;
 }
 
+.block {
+    width: 500px;
+    height: 200px;
+    background-color: red;
+    border: 1px solid black;
+}
+.bigblock {
+    width: 500px;
+    height: 600px;
+    background-color: blue;
+    border: 1px solid black;
+}
 
 
 
