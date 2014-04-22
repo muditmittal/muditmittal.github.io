@@ -14,16 +14,9 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/jquery-1.10.2.min.js"></script>
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <link href="//fonts.googleapis.com/css?family=Libre+Baskerville:400,700" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-
-<script> document.querySelector("#myCard").classList.toggle("flip") </script>
-
         <section class="about">
             <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                 <div class="flipper">
@@ -35,28 +28,50 @@
                     </div>
                 </div>
             </div>
-            <div class="info">
-                Hi, I am Mudit Mittal. <br/>
-                I design digital experiences.
-            </div>
+            <div class="title intro">Hi, I am Mudit Mittal. <br/>I design digital experiences.</div>
         </section>
+        <div class="clearfix visible-xs"></div>
+
         <section class="process">
-            <div class="info">
-                I believe,
+            <div class="title">I believe,</div>
+            <div class="asset">
+                <img class="magniflier" src="img/DesignProcess.png">
             </div>
-            <div><img class="magniflier" src="img/DesignProcess.png" width="680"></div>
         </section>
-        <section class="work">
-            <div class="info">
-                I work to craft stories for brands,<br/>
-                that are driven by function.
+        <div class="clearfix visible-xs"></div>
+
+        <section class="experience">
+            <div class="title">
+                I work to craft stories, <br/>for brands big & small.
             </div>
-            <div><img src="img/WorkBrands.png"></div>
+            <div class="asset">
+                <img src="img/WorkLogos.png" >
+            </div>
         </section>
+        <div class="clearfix visible-xs"></div>
+
+        <section class="work clearfix">
+            <div class="leftcol">
+                <div class="project">
+                    <img class="projectImage" src="img/project1.png" width="90%">
+                    <!-- <div class="projectTitle">Slide - A Multi Touch Gesture</div> -->
+                </div>
+                <div class="project">
+                    <img class="projectImage" src="img/project3.png" width="90%">
+                    <!-- <div class="projectTitle">A New Banking Experience</div> -->
+                </div>
+            </div>
+            <div class="rightcol">
+                <div class="project">
+                    <img class="projectImage" src="img/project2.png" width="90%">
+                    <!-- <div class="projectTitle">Designing Digital Packaging Experiences</div> -->
+                </div>
+            </div>
+        </section>
+        <div class="clearfix visible-xs"></div>
 
 
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
@@ -70,5 +85,15 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
+    <script> 
+        var spacing = ($(window).height()/2 - $(".flip-container").height());
+        $(".flip-container").css("margin-top",spacing);
+        $(".intro").css("margin-bottom",spacing);
+        $(".asset").css("margin-top",spacing/3);
+        $(".asset").css("margin-bottom",spacing/2.5);
+    </script>
+
+
+
     </body>
 </html>
