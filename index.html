@@ -54,17 +54,17 @@
         <section class="work clearfix">
             <div class="leftcol">
                 <div class="project">
-                    <img class="projectImage" src="img/project1.png" width="90%">
+                    <img class="projectImage" src="img/project1.png" width="100%">
                     <!-- <div class="projectTitle">Slide - A Multi Touch Gesture</div> -->
                 </div>
                 <div class="project">
-                    <img class="projectImage" src="img/project3.png" width="90%">
+                    <img class="projectImage" src="img/project3.png" width="100%">
                     <!-- <div class="projectTitle">A New Banking Experience</div> -->
                 </div>
             </div>
             <div class="rightcol">
                 <div class="project">
-                    <img class="projectImage" src="img/project2.png" width="90%">
+                    <img class="projectImage" src="img/project2.png" width="100%">
                     <!-- <div class="projectTitle">Designing Digital Packaging Experiences</div> -->
                 </div>
             </div>
@@ -86,12 +86,46 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
-    <script> 
-        var spacing = ($(window).height()/2 - $(".flip-container").height());
-        $(".flip-container").css("margin-top",spacing);
-        $(".intro").css("margin-bottom",spacing);
-        $(".asset").css("margin-top",spacing/3);
-        $(".asset").css("margin-bottom",spacing/2.5);
+    <script>
+        (function($,sr){
+          // debouncing function from John Hann
+          // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+          var debounce = function (func, threshold, execAsap) {
+              var timeout;
+              return function debounced () {
+                  var obj = this, args = arguments;
+                  function delayed () {
+                      if (!execAsap)
+                          func.apply(obj, args);
+                      timeout = null;
+                  };
+                  if (timeout)
+                      clearTimeout(timeout);
+                  else if (execAsap)
+                      func.apply(obj, args);
+                  timeout = setTimeout(delayed, threshold || 100);
+              };
+          }
+          jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+        })(jQuery,'smartresize');
+        $(window).smartresize(function(){
+            spacingcalc();
+        });
+
+        //Dynamic spacing calculations
+        var spacingcalc = function() {
+            var spacing = ($(window).height()/2 - $(".flip-container").height());
+            $(".flip-container").css("margin-top",spacing);
+            $(".intro").css("margin-bottom",spacing);
+            $(".asset").css("margin-top",spacing/3);
+            $(".asset").css("margin-bottom",spacing/2.5);            
+        }
+
+        spacingcalc();
+        //Initial nudge movement of logo
+        setTimeout( function(){ $(".front").addClass("flipright"); } , 20 );
+        setTimeout( function(){ $(".front").removeClass("flipright"); } , 700 );
+
     </script>
 
 

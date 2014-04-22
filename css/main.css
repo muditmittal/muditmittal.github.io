@@ -146,8 +146,11 @@ body {
 
 .leftcol, .rightcol {
   float: left;
-  width: 50%;
+  width: calc(50% - 10px);
   margin-bottom: 10vh;
+}
+.leftcol{
+  margin-right:20px;
 }
 .projectTitle {
   font-size: 1em;
@@ -273,6 +276,14 @@ body {
   }
   */
 
+
+
+.flipright{
+    -webkit-transform: rotateY(10deg);
+    -moz-transform: rotateY(10deg);
+    -o-transform: rotateY(10deg);
+    transform: rotateY(10deg);
+}
 
 
 
