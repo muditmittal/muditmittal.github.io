@@ -3,9 +3,6 @@
 
 //Magnifying glass function from http://cssdeck.com/labs/magnifying-glass-plugin-with-jquery-and-css3
 $(function() {
-// $(window).on('resize', function() {
-//   window.location.reload();
-// })
 
   var native_width = 0;
   var native_height = 0;
@@ -95,6 +92,10 @@ $(function() {
 
     return;
   };
+
+
+
+
 
   $('.magniflier').on('mousemove', function() {
     ui.glass.fadeIn(100);

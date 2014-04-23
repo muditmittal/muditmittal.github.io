@@ -121,12 +121,6 @@ body {
     float:left;
     width: 100%;  
 }
-.work {
-    width: 70%;
-    max-width: 900px;
-    min-width: 300px;
-    margin: 0 auto;  
-}
 .title {
     font-size:2.4em;
     line-height: 1.38em;
@@ -160,6 +154,176 @@ body {
   border: 1px solid #cccccc;
   margin-bottom: 20px;
 }
+.blur img {
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+ 
+.blur img:hover {
+  -webkit-filter: blur(5px);
+  -webkit-filter: grayscale(100%);
+}
+
+
+* {
+      -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================================
+   Work Section Styles
+   ========================================================================== */
+.work {
+    width: 100%;
+    min-width: 300px;
+    margin: 0 auto;
+    margin-top:4.8em;  
+}
+
+.grid {
+    padding: 20px 20px 100px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    list-style: none;
+    text-align: center;
+}
+.grid li {
+    display: inline-block;
+    width: 440px;
+    margin: 0;
+    padding: 20px;
+    text-align: left;
+    position: relative;
+}
+.grid figure {
+  margin: 0;
+  position: relative;
+}
+.grid figure img {
+  max-width: 100%;
+  display: block;
+  position: relative;
+}
+.grid figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    background: #222222;
+    color: #f6f6f6;
+}
+.grid figcaption h3 {
+  margin: 0;
+  padding: 0;
+  color: #f6f6f6;
+  font-size: 1.3em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+/*.grid figcaption span:before {
+  content: 'in ';
+}
+*/
+.grid figcaption span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1em;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+
+}
+.grid figcaption a {
+  text-align: center;
+  padding: 5px 10px;
+  display: inline-block;
+  color: #f6f6f6;
+  color: #f6f6f6;
+  text-decoration: none;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+}
+
+
+
+
+
+.hovercard figure {
+  overflow: hidden;
+}
+
+.hovercard figure img {
+  -webkit-transition: -webkit-transform 0.4s;
+  -moz-transition: -moz-transform 0.4s;
+  transition: transform 0.4s;
+}
+
+.no-touch .hovercard figure:hover img,
+.hovercard figure.cs-hover img {
+  -webkit-transform: translateY(-50px);
+  -moz-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  transform: translateY(-50px);
+}
+
+.hovercard figcaption {
+  display:block;
+  font-family: "Avenir Next", Arial;
+  font-size: 0.75em;
+  line-height: 1.38em;
+  height: 120px;
+  width: 100%;
+  top: auto;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+  -moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+  transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.no-touch .hovercard figure:hover figcaption,
+.hovercard figure.cs-hover figcaption {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+  -moz-transition: -moz-transform 0.4s, opacity 0.1s;
+  transition: transform 0.4s, opacity 0.1s;
+}
+
+.hovercard figcaption a {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+
+
+@media screen and (max-width: 31.5em) {
+    .grid {
+        padding: 10px 10px 100px 10px;
+    }
+    .grid li {
+        width: 100%;
+        min-width: 300px;
+    }
+}
+
+
+
+
+
+
+
+
 
 /* ==========================================================================
    Magnifying Glass Properties
