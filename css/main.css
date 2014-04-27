@@ -146,8 +146,6 @@ body {
     border: 2px solid #222222;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.9em;
     color: #222222;
 }
 
@@ -158,20 +156,22 @@ body {
 footer {
     width: 75%;
     text-align: center;
-    border-top: 1px solid #222222;
+    border-top: 1px solid #f6f6f6;
     margin: 0 auto;
 }
 
 footer p {
-    width: 70%;
+    /*width: 70%;*/
     margin: 2.4em auto;
     text-align: center;
     font-size: 20px;
     line-height: 32px;
 }
+
 footer a {
-    margin: 1em 0.75em 0 0.75em;  
+    margin: 1em 0.6em 0 0.6em;  
 }
+
 footer .social {
     margin-bottom: 6em;
 }
@@ -219,13 +219,16 @@ footer .social {
     background: #222222;
     color: #f6f6f6;
 }
-.grid figcaption h3 {
+.grid figcaption a h3 {
     margin: 0;
     padding: 0;
     color: #f6f6f6;
     font-size: 1.3em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+}
+.grid figcaption a, .grid figcaption a:visited {
+    text-decoration: none;
 }
 /*.grid figcaption span:before {
   content: 'in ';
@@ -237,11 +240,10 @@ footer .social {
     font-size: 1em;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
 }
-.grid figcaption a {
+.grid figcaption .link {
     text-align: center;
     padding: 5px 10px;
     display: inline-block;
-    color: #f6f6f6;
     color: #f6f6f6;
     text-decoration: none;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
@@ -294,7 +296,7 @@ footer .social {
     transition: transform 0.4s, opacity 0.1s;
 }
 
-.hovercard figcaption a {
+.hovercard figcaption .link {
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -438,8 +440,6 @@ footer .social {
   }
   */
 
-
-
 .flipright{
     -webkit-transform: rotateY(20deg);
     -moz-transform: rotateY(20deg);
@@ -457,23 +457,60 @@ footer .social {
 @media only screen and (min-width: 80px) {
     /* Style adjustments for viewports that meet the condition */
     .title {
-      font-size: 1.8em;
+      font-size: 24px;
+      line-height: 32px;
+      text-rendering: optimizeLegibility;
+    }
+    .resume a {
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+    footer p {
+      width: 100%;
+      font-size: 16px;
+      line-height: 24px;
+      text-rendering: optimizeLegibility;
     }
 }
 @media only screen and (min-width: 640px) {
     /* Style adjustments for viewports that meet the condition */
     .title {
-      font-size: 2.4em;
+      font-size: 32px;
+      line-height: 42px;
+      text-rendering: optimizeLegibility;
+    }
+    .resume a {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    footer p {
+      width: 80%;
+      max-width: 570px;
+      font-size: 18px;
+      line-height: 28px;
+      text-rendering: optimizeLegibility;
     }
     .asset img {
       margin: 4em 0 8em 0; 
     }
-
 }
 @media only screen and (min-width: 1440px) {
     /* Style adjustments for viewports that meet the condition */
     .title {
-      font-size: 2.8em;
+      font-size: 48px;
+      line-height: 58px;
+      text-rendering: optimizeLegibility;
+    }
+    .resume a {
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+    footer p {
+      width: 40%;
+      max-width: 720px;
+      font-size: 24px;
+      line-height: 32px;
+      text-rendering: optimizeLegibility;
     }
     .asset img {
       margin: 6em 0 10em 0; 
