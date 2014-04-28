@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Mudit Mittal, User Experience Designer</title>
+        <meta name="description" content="Mudit Mittal, User Experience Designer, R/GA Chicago">
+        <meta name="keywords" content="Mudit Mittal, User Experience Designer, UX Designer, Experience Designer, Mudit UX, R/GA Chicago" />
+        <meta name="author" content="Mudit Mittal" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/jquery-1.10.2.min.js"></script>
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <link href="//fonts.googleapis.com/css?family=Libre+Baskerville:400,700" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+    </head>
+    <body>
+        <div class="clearfix visible-xs"></div>
+        <a href="index.html"> Back to homepage</a>
+
+        <footer>
+            <p>I am a User Expereince Designer at R/GA, Chicago. I am a digital architect translating ideas into meaningful experiences. I love sketching and rapid iterations.</p>
+            <div class="social">
+                <a href="http://twitter.com/muditmittal"><img src="img/Twitter.png" alt="Twitter"></a>
+                <a href="http://linkedin.com/in/muditmittal/"><img src="img/LinkedIn.png" alt="LinkedIn"></a>
+                <a href="http://behance.net/muditmittal"><img src="img/Behance.png" alt="Behance"></a>
+                <a href="http://instagram.com/muditmittal"><img src="img/Instagram.png" alt="Instagram"></a>
+            </div>
+        </footer>
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    <script>
+        (function($,sr){
+          // debouncing function from John Hann
+          // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+          var debounce = function (func, threshold, execAsap) {
+              var timeout;
+              return function debounced () {
+                  var obj = this, args = arguments;
+                  function delayed () {
+                      if (!execAsap)
+                          func.apply(obj, args);
+                      timeout = null;
+                  };
+                  if (timeout)
+                      clearTimeout(timeout);
+                  else if (execAsap)
+                      func.apply(obj, args);
+                  timeout = setTimeout(delayed, threshold || 100);
+              };
+          }
+          jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+        })(jQuery,'smartresize');
+        $(window).smartresize(function(){
+            spacingcalc();
+        });
+
+        //Dynamic spacing calculations
+        var spacingcalc = function() {
+            var spacing = ($(window).height()/2 - $(".flip-container").height());
+            $(".flip-container").css("margin-top",spacing);
+            $(".intro").css("margin-bottom",spacing);
+            // $(".asset").css("margin-top",spacing/3);
+            // $(".asset").css("margin-bottom",spacing/2.5);            
+        }
+
+        spacingcalc();
+        //Initial nudge movement of logo
+        // setTimeout( function(){ $(".front").addClass("flipright"); } , 20 );
+        // setTimeout( function(){ $(".front").removeClass("flipright"); } , 700 );
+
+    </script>
+
+
+
+    </body>
+</html>
+
+
+
