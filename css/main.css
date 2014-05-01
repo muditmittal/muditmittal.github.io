@@ -307,7 +307,7 @@ footer .social {
 }
 
 .touch .hovercard figcaption {
-  opacity: 100%;
+  opacity: 1;
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
     -ms-transform: translateY(0%);
