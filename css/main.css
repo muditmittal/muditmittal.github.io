@@ -169,11 +169,11 @@ footer p {
 }
 
 footer a {
-    margin: 1em 0.5em 0 0.5em;  
+    margin: 1em 0.5em 1em 0.5em;  
 }
 
 footer .social {
-    margin-bottom: 6em;
+    margin-bottom: 5em;
 }
 footer .social .first {
     margin-left: 0;
