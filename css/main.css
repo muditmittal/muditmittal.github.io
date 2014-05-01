@@ -302,10 +302,19 @@ footer .social {
     right: 20px;
 }
 
-html.touch .hovercard figure {
-  overflow: visible;
+.touch .hovercard figure {
+    overflow: visible;
 }
 
+.touch .hovercard figcaption {
+  opacity: 100%;
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+}
+.touch .grid figcaption {
+  position: relative;
+}
 
 
 @media screen and (max-width: 31.5em) {
