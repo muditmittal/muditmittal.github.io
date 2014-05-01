@@ -169,7 +169,7 @@ footer p {
 }
 
 footer a {
-    margin: 1em 0.6em 0 0.6em;  
+    margin: 1em 0.5em 0 0.5em;  
 }
 
 footer .social {
@@ -307,13 +307,16 @@ footer .social {
 }
 
 .touch .hovercard figcaption {
-  opacity: 1;
+    opacity: 1;
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
     -ms-transform: translateY(0%);
 }
 .touch .grid figcaption {
-  position: relative;
+    position: relative;
+}
+.touch .hovercard figcaption .link {
+    display: none;
 }
 
 
