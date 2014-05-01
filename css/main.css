@@ -302,6 +302,10 @@ footer .social {
     right: 20px;
 }
 
+html.touch .hovercard figure {
+  overflow: visible;
+}
+
 
 
 @media screen and (max-width: 31.5em) {

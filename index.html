@@ -117,12 +117,49 @@
         </footer>
 
 
+        <!-- Calling all scripts -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!-- Custom script for key interactions -->
+        <script>
+                (function($,sr){
+                  // debouncing function from John Hann
+                  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+                  var debounce = function (func, threshold, execAsap) {
+                      var timeout;
+                      return function debounced () {
+                          var obj = this, args = arguments;
+                          function delayed () {
+                              if (!execAsap)
+                                  func.apply(obj, args);
+                              timeout = null;
+                          };
+                          if (timeout)
+                              clearTimeout(timeout);
+                          else if (execAsap)
+                              func.apply(obj, args);
+                          timeout = setTimeout(delayed, threshold || 100);
+                      };
+                  }
+                  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+                })(jQuery,'smartresize');
+                $(window).smartresize(function(){
+                    spacingcalc();
+                });
+
+                //Dynamic spacing calculations
+                var spacingcalc = function() {
+                    var spacing = ($(window).height()/2 - $(".flip-container").height());
+                    $(".flip-container").css("margin-top",spacing);
+                    $(".intro").css("margin-bottom",spacing);
+                }
+                spacingcalc();
+        </script>
+
+        <!-- Google Analytics code -->
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -131,50 +168,7 @@
 
           ga('create', 'UA-50537703-1', 'muditmittal.github.io');
           ga('send', 'pageview');
-
         </script>
-    <script>
-        (function($,sr){
-          // debouncing function from John Hann
-          // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
-          var debounce = function (func, threshold, execAsap) {
-              var timeout;
-              return function debounced () {
-                  var obj = this, args = arguments;
-                  function delayed () {
-                      if (!execAsap)
-                          func.apply(obj, args);
-                      timeout = null;
-                  };
-                  if (timeout)
-                      clearTimeout(timeout);
-                  else if (execAsap)
-                      func.apply(obj, args);
-                  timeout = setTimeout(delayed, threshold || 100);
-              };
-          }
-          jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
-        })(jQuery,'smartresize');
-        $(window).smartresize(function(){
-            spacingcalc();
-        });
-
-        //Dynamic spacing calculations
-        var spacingcalc = function() {
-            var spacing = ($(window).height()/2 - $(".flip-container").height());
-            $(".flip-container").css("margin-top",spacing);
-            $(".intro").css("margin-bottom",spacing);
-            // $(".asset").css("margin-top",spacing/3);
-            // $(".asset").css("margin-bottom",spacing/2.5);            
-        }
-
-        spacingcalc();
-        //Initial nudge movement of logo
-        // setTimeout( function(){ $(".front").addClass("flipright"); } , 20 );
-        // setTimeout( function(){ $(".front").removeClass("flipright"); } , 700 );
-
-    </script>
-
 
 
     </body>
