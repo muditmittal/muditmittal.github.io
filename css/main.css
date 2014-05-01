@@ -175,6 +175,12 @@ footer a {
 footer .social {
     margin-bottom: 6em;
 }
+footer .social .first {
+    margin-left: 0;
+}
+footer .social .last {
+    margin-right: 0;
+}
 
 
 /* ==========================================================================
