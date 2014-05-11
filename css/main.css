@@ -111,6 +111,13 @@ body {
     background-color: #f6f6f6;
 }
 
+.nav {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 4em;
+}
+
 .process {
     float:left;
     width: 100%;  
@@ -151,6 +158,11 @@ body {
 
 .resume a:visited {
   color: #222222;
+}
+
+.box {
+  text-align: center;
+  margin: 4em auto;
 }
 
 footer {
